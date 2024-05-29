@@ -25,7 +25,35 @@
         <nav><a href="index.html"><img src="./eduford_img/logo.png" alt=""></a>
             <div class="nav-links id=" navLinks">
                 <i class="fa fa-time" onclick="hideMenu()"></i>
-                <ul>
+                <ul>     <li>
+                    <div class="mode-toggle">
+                        <label class="switch">
+                          <button style="width: 30px; background-color: rgb(3, 41, 42);">  <input type="checkbox" id="modeToggle"></button>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <script>
+                         const modeToggle = document.getElementById('modeToggle');
+                    modeToggle.addEventListener('change', function() {
+                        if (modeToggle.checked) {
+                            document.body.classList.add('dark-mode');
+                            localStorage.setItem('theme', 'dark');
+                        } else {
+                            document.body.classList.remove('dark-mode');
+                            localStorage.setItem('theme', 'light');
+                        }
+                    });
+            
+                    // Check for saved theme preference
+                    window.onload = function() {
+                        const theme = localStorage.getItem('theme');
+                        if (theme === 'dark') {
+                            document.body.classList.add('dark-mode');
+                            modeToggle.checked = true;
+                        }
+                    }
+                    </script>
+                </li>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="contact.html">COURSE</a></li>

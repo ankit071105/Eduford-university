@@ -41,7 +41,9 @@ nav img {
     flex: 1;
     text-align: right;
 }
-
+.nav-links ul{
+    margin-right: 40px;
+}
 .nav-links ul li {
     list-style: none;
     display: inline-block;
@@ -684,3 +686,81 @@ h3 {
     transition:.5s;
     top:0;
   }
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .header,
+.dark-mode .sub-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./eduford_img/banner.png);
+}
+
+.dark-mode nav {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.dark-mode .cta {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./eduford_img/banner2.jpg);
+}
+
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode h3, 
+.dark-mode h4, 
+.dark-mode h5, 
+.dark-mode h6, 
+.dark-mode p, 
+.dark-mode a, 
+.dark-mode span, 
+.dark-mode li, 
+.dark-mode .fa {
+    color: #ffffff;
+}
+
+.dark-mode .hero-btn {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.dark-mode .hero-btn:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #725AC1;
+}
+
+.dark-mode .course-col,
+.dark-mode .testimonials-col,
+.dark-mode .contact-col input[type="submit"] {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .course-col:hover,
+.dark-mode .testimonials-col:hover,
+.dark-mode .contact-col input[type="submit"]:hover {
+    background-color: #333333;
+}
+
+.dark-mode .facilities-col-back {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .layer:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.dark-mode .layer h3 {
+    color: #000000;
+}
+
+.dark-mode .blog-left p,
+.dark-mode .blog-right div,
+.dark-mode .contact-col div h5,
+.dark-mode .contact-col div p {
+    color: #bbbbbb;
+}
+
+

@@ -16,6 +16,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>EDUFORD UNIVERSITY WEBSITE</title>
 </head>
 
@@ -25,20 +26,55 @@
             <div class="nav-links" id=" navLinks">
                 <i class="fa-sharp fa-solid fa-xmark" onclick="hideMenu()"></i>
                 <ul>
+                    <li>
+                        <div class="mode-toggle">
+                            <label class="switch">
+                              <button style="width: 30px; background-color: rgb(3, 41, 42);">  <input type="checkbox" id="modeToggle"></button>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <script>
+                             const modeToggle = document.getElementById('modeToggle');
+                        modeToggle.addEventListener('change', function() {
+                            if (modeToggle.checked) {
+                                document.body.classList.add('dark-mode');
+                                localStorage.setItem('theme', 'dark');
+                            } else {
+                                document.body.classList.remove('dark-mode');
+                                localStorage.setItem('theme', 'light');
+                            }
+                        });
+                
+                        // Check for saved theme preference
+                        window.onload = function() {
+                            const theme = localStorage.getItem('theme');
+                            if (theme === 'dark') {
+                                document.body.classList.add('dark-mode');
+                                modeToggle.checked = true;
+                            }
+                        }
+                        </script>
+                    </li>
                     <li class="active-nav"><a href="index.html">HOME</a></li>
                     <li><a href="about.html">ABOUT</a></li>
                     <li><a href="contact.html">COURSE</a></li>
                     <li><a href="blog.html">BLOG</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
                 </ul>
-            </div><i class="fa-solid fa-bars" onclick="showMenu()"></i>
+            </div><i class="fa-solid fa-bars" onclick="showMenu()"></i>>
         </nav>
+      
         <div class="text-box">
             <h1>World's Biggest University</h1>
             <p>Education is essential in today's world. Explore the latest advancements and upcoming languages at our
                 university. Dive into programming and much more.
 
-            </p><a href="contact.html" class="hero-btn">Visit Us To Know More</a>
+            </p>
+           
+            <a href="contact.html" class="hero-btn">Visit Us To Know More</a>
+            <br>
+            <br>
+            <div id="dateTime"></div>
         </div>
     </section>
     <!-- Course  -->
@@ -244,8 +280,6 @@
             navLinks.style.right = "-200px";
         }
     </script>
-
-
     <!-- Lenis smooth and premium scroll behavior -->
     <script>
         const lenis = new Lenis({
@@ -267,6 +301,20 @@
 
 
     </script>
+ <script>
+    function updateDateTime() {
+        const dateTimeElement = document.getElementById('dateTime');
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        dateTimeElement.innerHTML = now.toLocaleDateString('en-US', options);
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
+
+
+
+
 </body>
 
 </html>
